@@ -37,7 +37,13 @@ if st.button("다음"):
         st.error("숙명대학교 이메일만 가입 가능합니다.")
 
     else:
+try:
+    sign_up(email, password)
 
-        st.success("입력 완료!")
+    st.success("회원가입이 완료되었습니다.")
+    st.success("학교 이메일로 인증 메일을 보냈습니다.")
 
-        st.switch_page("pages/3_이메일인증.py")
+    st.switch_page("pages/3_이메일인증.py")
+
+except Exception as e:
+    st.error(f"회원가입 실패 : {e}")
