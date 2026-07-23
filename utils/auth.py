@@ -7,10 +7,17 @@ key = st.secrets["SUPABASE_KEY"]
 supabase = create_client(url, key)
 
 def sign_up(email, password):
-    response = supabase.auth.sign_up(
+    return supabase.auth.sign_up(
         {
             "email": email,
             "password": password,
         }
     )
-    return response
+
+def sign_in(email, password):
+    return supabase.auth.sign_in_with_password(
+        {
+            "email": email,
+            "password": password,
+        }
+    )
