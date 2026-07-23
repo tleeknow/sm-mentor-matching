@@ -1,3 +1,4 @@
+from utils.auth import sign_up
 import streamlit as st
 
 st.title("📝 회원가입")
